@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void hideProgress() {
-        if(progress.isShowing()) progress.dismiss();
+        if (progress.isShowing()) progress.dismiss();
     }
 
     public void showOkDialog(String dialogMsg) {
