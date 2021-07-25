@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Rick And Morty App</string>
+    <string name="app_name" translatable="false">Rick And Morty App</string>
+    <string name="text_characters">Personajes</string>
+    <string name="text_places">Lugares</string>
+    <string name="text_episodes">Episodios</string>
+    <string name="text_favs">Mis Favoritos</string>
 </resources>
