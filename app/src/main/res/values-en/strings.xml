@@ -5,4 +5,5 @@
     <string name="text_episodes">Episodes</string>
     <string name="text_favs">My Favs</string>
     <string name="empty_list">There aren\'t results</string>
+    <string name="text_name">Name: %1$s</string>
 </resources>
