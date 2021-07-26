@@ -1,7 +1,10 @@
 package co.com.luisprmat.training.rickandmortyapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import co.com.luisprmat.training.rickandmortyapp.characters.CharactersActivity;
 
 public class MainActivity extends BaseActivity {
     private enum BTEvent {
@@ -20,6 +23,14 @@ public class MainActivity extends BaseActivity {
     }
 
     private  void buttonEvent(BTEvent btEvent) {
+        Intent i = null;
 
+        switch (btEvent) {
+            case CHARACTERS:
+                i = new Intent(MainActivity.this, CharactersActivity.class);
+                break;
+        }
+
+        startActivity(i);
     }
 }
