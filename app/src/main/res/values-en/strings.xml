@@ -6,4 +6,9 @@
     <string name="text_favs">My Favs</string>
     <string name="empty_list">There aren\'t results</string>
     <string name="text_name">Name: %1$s</string>
+    <string name="text_status">Status: %1$s</string>
+    <string name="text_species">Species: %1$s</string>
+    <string name="text_gender">Gender: %1$s</string>
+    <string name="text_origin">Origin: %1$s</string>
+    <string name="text_type">Type: %1$s</string>
 </resources>

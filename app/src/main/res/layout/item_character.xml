@@ -12,6 +12,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/ivAvatar"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:src="@mipmap/ic_launcher" />
@@ -23,12 +24,42 @@
             android:layout_marginLeft="5dp"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvName"
-            android:text="@string/text_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_name" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_status" />
+
+            <TextView
+                android:id="@+id/tvSpecies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_species" />
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_gender" />
+
+            <TextView
+                android:id="@+id/tvOrigin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_origin" />
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/rymPrimary" />
 
 </LinearLayout>

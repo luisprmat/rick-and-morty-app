@@ -6,4 +6,9 @@
     <string name="text_favs">Mis Favoritos</string>
     <string name="empty_list">No se encontraron resultados</string>
     <string name="text_name">Nombre: %1$s</string>
+    <string name="text_status">Estado: %1$s</string>
+    <string name="text_species">Especie: %1$s</string>
+    <string name="text_gender">Género: %1$s</string>
+    <string name="text_origin">Origen: %1$s</string>
+    <string name="text_type">Tipo: %1$s</string>
 </resources>
