@@ -29,6 +29,11 @@
             android:name=".characters.CharacterDetailActivity"
             android:parentActivityName=".characters.CharactersActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".locations.LocationsActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

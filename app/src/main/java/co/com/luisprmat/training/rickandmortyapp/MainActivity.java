@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import co.com.luisprmat.training.rickandmortyapp.characters.CharactersActivity;
+import co.com.luisprmat.training.rickandmortyapp.locations.LocationsActivity;
 
 public class MainActivity extends BaseActivity {
     private enum BTEvent {
@@ -28,6 +29,10 @@ public class MainActivity extends BaseActivity {
         switch (btEvent) {
             case CHARACTERS:
                 i = new Intent(MainActivity.this, CharactersActivity.class);
+                break;
+
+            case PLACES:
+                i = new Intent(MainActivity.this, LocationsActivity.class);
                 break;
         }
 
