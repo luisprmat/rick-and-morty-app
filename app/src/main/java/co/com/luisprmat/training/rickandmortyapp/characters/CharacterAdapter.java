@@ -1,6 +1,7 @@
 package co.com.luisprmat.training.rickandmortyapp.characters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,8 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterViewHolder> 
         Character character = characters.get(position);
 
         holder.llCharacterContainer.setOnClickListener(v -> {
-
+            Intent intent = new Intent(context, CharacterDetailActivity.class);
+            context.startActivity(intent);
         });
 
         Glide.with(context)

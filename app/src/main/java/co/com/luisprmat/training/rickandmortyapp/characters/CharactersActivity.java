@@ -56,14 +56,14 @@ public class CharactersActivity extends BaseActivity {
                     characters.addAll(response.body().getResults());
                     adapter.notifyDataSetChanged();
                 } else {
-                    showOkDialog("Error cargando personajes");
+                    showOkDialog("No encontramos presonajes");
                 }
             }
 
             @Override
             public void onFailure(Call<CharactersResponse> call, Throwable t) {
                 hideProgress();
-                showOkDialog("Error cargando personajes r");
+                showOkDialog("Error cargando personajes");
             }
         });
     }

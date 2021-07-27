@@ -11,4 +11,6 @@
     <string name="text_gender">Gender: %1$s</string>
     <string name="text_origin">Origin: %1$s</string>
     <string name="text_type">Type: %1$s</string>
+    <string name="text_species_title">Species</string>
+    <string name="button_favs">Save as favorite</string>
 </resources>
