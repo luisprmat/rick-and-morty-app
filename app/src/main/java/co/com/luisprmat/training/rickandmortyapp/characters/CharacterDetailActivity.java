@@ -45,6 +45,20 @@ public class CharacterDetailActivity extends BaseActivity {
 
         Button btSave = findViewById(R.id.btSave);
         btSave.setOnClickListener(v -> addToFavs());
+
+        ImageView ivGender = findViewById(R.id.ivGender);
+        if (gender.toLowerCase().equals("Male"))
+            ivGender.setImageResource(R.drawable.ic_male);
+        else
+            ivGender.setImageResource(R.drawable.ic_female);
+
+        ImageView ivStatus = findViewById(R.id.ivStatus);
+        if (status.toLowerCase().equals("dead"))
+            ivStatus.setVisibility(View.VISIBLE);
+        else
+            ivStatus.setVisibility(View.GONE);
+
+        getSupportActionBar().setTitle("Personaje: " + name);
     }
 
     private void addToFavs() {
