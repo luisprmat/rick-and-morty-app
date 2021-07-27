@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import co.com.luisprmat.training.rickandmortyapp.R;
+import co.com.luisprmat.training.rickandmortyapp.commons.Constants;
 
 public class CharacterAdapter extends RecyclerView.Adapter<CharacterViewHolder> {
     Context context;
@@ -37,6 +38,11 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterViewHolder> 
 
         holder.llCharacterContainer.setOnClickListener(v -> {
             Intent intent = new Intent(context, CharacterDetailActivity.class);
+            intent.putExtra(Constants.EXTRA_NAME, character.getName());
+            intent.putExtra(Constants.EXTRA_GENDER, character.getGender());
+            intent.putExtra(Constants.EXTRA_STATUS, character.getStatus());
+            intent.putExtra(Constants.EXTRA_SPECIES, character.getSpecies());
+            intent.putExtra(Constants.EXTRA_AVATAR, character.getImage());
             context.startActivity(intent);
         });
 
