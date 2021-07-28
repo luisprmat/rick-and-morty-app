@@ -14,4 +14,6 @@
     <string name="text_type">Tipo: %1$s</string>
     <string name="button_favs">Guardar en Favoritos</string>
     <string name="text_dimension">Dimensión: %1$s</string>
+    <string name="text_air_date">Fecha de emisión: %1$s</string>
+    <string name="text_episode">Episodio: %1$s</string>
 </resources>

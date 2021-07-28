@@ -14,4 +14,6 @@
     <string name="text_species_title">Species</string>
     <string name="button_favs">Save as favorite</string>
     <string name="text_dimension">Dimension: %1$s</string>
+    <string name="text_air_date">Broadcast Date: %1$s</string>
+    <string name="text_episode">Episode: %1$s</string>
 </resources>
