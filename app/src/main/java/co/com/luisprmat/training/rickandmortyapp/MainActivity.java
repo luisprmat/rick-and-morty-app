@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btEpisodes).setOnClickListener(v -> buttonEvent(BTEvent.EPISODES));
         findViewById(R.id.btFavs).setOnClickListener(v -> buttonEvent(BTEvent.FAVS));
 
-        saveGsonObj();
+
     }
 
     private  void buttonEvent(BTEvent btEvent) {
@@ -47,16 +47,5 @@ public class MainActivity extends BaseActivity {
         }
 
         startActivity(i);
-    }
-
-    private void saveGsonObj() {
-        Location location = new Location("Quetame", "ciudad", "C-128" );
-
-        Gson gson = new Gson();
-        String jsonLocation = gson.toJson(location);
-
-        SharedPreferences.Editor editor = getSharedPreferences("prefs", MODE_PRIVATE).edit();
-        editor.putString("name", jsonLocation);
-        editor.apply();
     }
 }
