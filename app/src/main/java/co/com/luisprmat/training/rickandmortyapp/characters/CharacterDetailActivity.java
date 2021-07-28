@@ -5,14 +5,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 
+import java.util.List;
+
 import co.com.luisprmat.training.rickandmortyapp.BaseActivity;
 import co.com.luisprmat.training.rickandmortyapp.R;
 import co.com.luisprmat.training.rickandmortyapp.commons.Constants;
+import co.com.luisprmat.training.rickandmortyapp.commons.StorageManager;
 
 public class CharacterDetailActivity extends BaseActivity {
     String name, gender, status, species, avatar;
@@ -62,7 +66,27 @@ public class CharacterDetailActivity extends BaseActivity {
     }
 
     private void addToFavs() {
+        Character character = new Character(name, status, species, gender, avatar);
 
+        if (isFavExists(character.getName())) {
+            Toast.makeText(this, "El Personaje: " + character.getName() + " ya es uno de mis favoritos ...", Toast.LENGTH_SHORT).show();
+        } else {
+            StorageManager.getInstance(CharacterDetailActivity.this).addCharacter(character);
+
+            Toast.makeText(this, "Personaje: " + character.getName() + " fue agregado a mis favoritos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isFavExists(String name) {
+        List<Character> characterList = StorageManager.getInstance(this).getCharacters();
+
+        for (Character character : characterList) {
+            if (character.getName().equals(name)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void loadAvatarImage() {

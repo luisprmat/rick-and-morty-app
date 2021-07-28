@@ -20,6 +20,14 @@ public class Character {
     private String url;
     private String created;
 
+    public Character(String name, String status, String species, String gender, String image) {
+        this.name = name;
+        this.status = status;
+        this.species = species;
+        this.gender = gender;
+        this.image = image;
+    }
+
     static class CustomData {
         private String name;
         private String url;
