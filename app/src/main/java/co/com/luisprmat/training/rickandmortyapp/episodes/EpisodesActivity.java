@@ -6,10 +6,15 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import co.com.luisprmat.training.rickandmortyapp.BaseActivity;
 import co.com.luisprmat.training.rickandmortyapp.R;
 
 public class EpisodesActivity extends BaseActivity {
+    private List<Episode> episodes;
+    private EpisodeAdapter adapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +25,9 @@ public class EpisodesActivity extends BaseActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rvEpisodes.setLayoutManager(linearLayoutManager);
+
+        adapter = new EpisodeAdapter(this, episodes);
+        rvEpisodes.setAdapter(adapter);
 
         loadEpisodes();
     }
