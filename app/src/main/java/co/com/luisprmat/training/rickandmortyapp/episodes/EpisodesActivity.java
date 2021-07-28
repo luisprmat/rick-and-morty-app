@@ -6,13 +6,18 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.com.luisprmat.training.rickandmortyapp.BaseActivity;
 import co.com.luisprmat.training.rickandmortyapp.R;
+import co.com.luisprmat.training.rickandmortyapp.network.RMLoader;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class EpisodesActivity extends BaseActivity {
-    private List<Episode> episodes;
+    private List<Episode> episodes = new ArrayList<>();
     private EpisodeAdapter adapter;
 
     @Override
@@ -33,6 +38,26 @@ public class EpisodesActivity extends BaseActivity {
     }
 
     private void loadEpisodes() {
+        showProgress("Cargando episodios");
 
+        RMLoader.getAPI().getEpisodes().enqueue(new Callback<EpisodesResponse>() {
+            @Override
+            public void onResponse(Call<EpisodesResponse> call, Response<EpisodesResponse> response) {
+                hideProgress();
+                if (response.isSuccessful() && response.body().getResults() != null) {
+                    episodes.clear();
+                    episodes.addAll(response.body().getResults());
+                    adapter.notifyDataSetChanged();
+                } else {
+                    showOkDialog("Error cargando episodios");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<EpisodesResponse> call, Throwable t) {
+                hideProgress();
+                showOkDialog("Error cargando episodios");
+            }
+        });
     }
 }
