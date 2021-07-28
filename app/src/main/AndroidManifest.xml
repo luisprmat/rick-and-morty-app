@@ -34,6 +34,11 @@
             android:name=".locations.LocationsActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".episodes.EpisodesActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

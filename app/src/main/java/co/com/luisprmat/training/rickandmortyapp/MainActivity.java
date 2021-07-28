@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import co.com.luisprmat.training.rickandmortyapp.characters.CharactersActivity;
+import co.com.luisprmat.training.rickandmortyapp.episodes.EpisodesActivity;
 import co.com.luisprmat.training.rickandmortyapp.locations.LocationsActivity;
 
 public class MainActivity extends BaseActivity {
@@ -33,6 +34,10 @@ public class MainActivity extends BaseActivity {
 
             case PLACES:
                 i = new Intent(MainActivity.this, LocationsActivity.class);
+                break;
+
+            case EPISODES:
+                i = new Intent(MainActivity.this, EpisodesActivity.class);
                 break;
         }
 
