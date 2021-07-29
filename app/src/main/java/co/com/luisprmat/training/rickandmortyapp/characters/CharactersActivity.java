@@ -1,6 +1,7 @@
 package co.com.luisprmat.training.rickandmortyapp.characters;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,8 @@ import java.util.List;
 
 import co.com.luisprmat.training.rickandmortyapp.BaseActivity;
 import co.com.luisprmat.training.rickandmortyapp.R;
+import co.com.luisprmat.training.rickandmortyapp.commons.Constants;
+import co.com.luisprmat.training.rickandmortyapp.commons.StorageManager;
 import co.com.luisprmat.training.rickandmortyapp.network.RMLoader;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,7 +44,26 @@ public class CharactersActivity extends BaseActivity {
 
         rvCharacters.setAdapter(adapter);
 
-        loadCharactersFromNetwork();
+        boolean favs = getIntent().getBooleanExtra(Constants.EXTRA_FAVS, false);
+
+        if (favs) loadCharactersFromFavs();
+        else loadCharactersFromNetwork();
+    }
+
+    private void loadCharactersFromFavs() {
+        List<Character> characterList = StorageManager.getInstance(this).getCharacters();
+
+        if (characterList.isEmpty()) {
+            tvEmptyList.setVisibility(View.VISIBLE);
+            rvCharacters.setVisibility(View.GONE);
+        } else {
+            tvEmptyList.setVisibility(View.GONE);
+            rvCharacters.setVisibility(View.VISIBLE);
+
+            characters.clear();
+            characters.addAll(characterList);
+            adapter.notifyDataSetChanged();
+        }
     }
 
     private void loadCharactersFromNetwork() {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.google.gson.Gson;
 
 import co.com.luisprmat.training.rickandmortyapp.characters.CharactersActivity;
+import co.com.luisprmat.training.rickandmortyapp.commons.Constants;
 import co.com.luisprmat.training.rickandmortyapp.episodes.EpisodesActivity;
 import co.com.luisprmat.training.rickandmortyapp.locations.Location;
 import co.com.luisprmat.training.rickandmortyapp.locations.LocationsActivity;
@@ -43,6 +44,11 @@ public class MainActivity extends BaseActivity {
 
             case EPISODES:
                 i = new Intent(MainActivity.this, EpisodesActivity.class);
+                break;
+
+            case FAVS:
+                i = new Intent(MainActivity.this, CharactersActivity.class);
+                i.putExtra(Constants.EXTRA_FAVS, true);
                 break;
         }
 
